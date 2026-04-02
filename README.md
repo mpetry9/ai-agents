@@ -1,4 +1,4 @@
-# pdoructs-api
+# products-api
 
 Simple CRUD API for `products` using Express + TypeScript.
 
@@ -18,6 +18,7 @@ By default, the server listens on `http://localhost:3000`.
 `POST /products` - create product
 
 Body:
+
 ```json
 { "name": "Keyboard", "price": 99.9, "description": "Mechanical" }
 ```
@@ -27,4 +28,3 @@ Body:
 `PUT /products/:id` - update product (partial updates)
 
 `DELETE /products/:id` - delete product
-
