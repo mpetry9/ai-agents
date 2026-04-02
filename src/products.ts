@@ -13,8 +13,10 @@ export type CreateProductInput = {
 
 export type UpdateProductInput = Partial<Omit<Product, "id">>;
 
-let products: Product[] = [];
+const products: Product[] = [];
 let nextId = 1;
+// uncomment the line below to test linting and code quality checks
+// const unused = "lint bait";
 
 export function listProducts(): Product[] {
   return products;
@@ -45,7 +47,10 @@ export function updateProduct(
 
   if (typeof input.name === "string") product.name = input.name;
   if (typeof input.price === "number") product.price = input.price;
-  if (typeof input.description === "string" || typeof input.description === "undefined")
+  if (
+    typeof input.description === "string" ||
+    typeof input.description === "undefined"
+  )
     product.description = input.description;
 
   return product;
@@ -57,4 +62,3 @@ export function deleteProduct(id: number): boolean {
   products.splice(index, 1);
   return true;
 }
-
